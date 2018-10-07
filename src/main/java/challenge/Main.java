@@ -2,18 +2,14 @@ package challenge;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
-import challenge.Jogadores;
-import challenge.ExtraindoDadosDoCSV;
-import challenge.OrdenarClausulas;
-import challenge.OrdenarDataDeNascimento;
+import javax.annotation.Generated;
 
 public class Main {
 	static Main objetoMain = new Main();
@@ -31,7 +27,7 @@ public class Main {
 	    List<Jogadores> dados = objetoMain.executarMetodos();
 		Set<String> paises = new HashSet<String>();
 		
-		for(int i = 0; i < dados.size(); i++) {
+		for(int i = 1; i < dados.size(); i++) {
 			paises.add(dados.get(i).getNacionalidade());
 		} 
 		
@@ -46,7 +42,8 @@ public class Main {
 		Set<String> clubes = new HashSet<String>();
 		for(int i = 0; i < dados.size(); i++) {
 			clubes.add(dados.get(i).getNomeDosClubes());
-		} 
+		}
+
 		return clubes.size();
 	}
 
@@ -54,23 +51,12 @@ public class Main {
 	public List<String> q3() {
 		List<Jogadores> dados = objetoMain.executarMetodos();
 		List<String> nomeCompleto = new ArrayList<String>();
-		List<String> primeiroNome = new ArrayList<String>();
-		String padrao = "\\S+";
-		Pattern p = Pattern.compile(padrao);
-		
-		
-		for(int i = 0; i < dados.size(); i++) {
-			nomeCompleto.add(dados.get(i).getNomeCompleto());
-		}
 		
 		for(int i = 0; i < 20; i++) {
-			Matcher m = p.matcher(nomeCompleto.get(i));
-			if(m.find()) {
-				primeiroNome.add(m.group(0));
-			}
+			nomeCompleto.add(dados.get(i).getNomeCompleto());
 		}
 
-		return primeiroNome;
+		return nomeCompleto;
 	}
 
 	// Quem são os top 10 jogadores que possuem as maiores cláusulas de rescisão?
@@ -93,11 +79,15 @@ public class Main {
 	public List<String> q5() {
 		List<Jogadores> dados = objetoMain.executarMetodos();
 		List<String> osMaisVelhos = new ArrayList<String>();
-		
-		Collections.sort(dados, new OrdenarDataDeNascimento().reversed());
+
+		Collections.sort(dados, new OrdenarDataDeNascimento());
 		
 		for(int i = 0; i < 10; i++) {
 			osMaisVelhos.add(dados.get(i).getNomeCompleto());
+		}
+		
+		for(int i = 0; i < 10; i++) {
+			System.out.println(osMaisVelhos.get(i));
 		}
 		
 		return osMaisVelhos;

@@ -14,7 +14,7 @@ public class MainTest {
 
 	@Test
 	public void q2() throws Exception {
-		assertNotEquals(649, new Main().q2());
+		assertNotEquals(647, new Main().q2());
 	}
 
 	@Test
