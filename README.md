@@ -1,23 +1,10 @@
-# Processe dados dos jogadores do FIFA© 2017 usando Java
+# Processando Dados dos Jogadores FIFA 2017
 
-Utilizando Java, você deverá descobrir quais são os melhores jogadores, quais os mais valiosos e quais são suas nacionalidades.
+** Post Criado em:** 11/09/2018
+** Post Atualizado em:** 
 
-## Tópicos
+## O que aprendi com esse desafio?
 
-Neste desafio você aprenderá:
-
-- Java
-- Ler arquivo CSV
-- Processar grandes quantidades de dados
-
-
-## Requisitos
-​
-Para este desafio você precisará de:
-
-- Java 8 (ou superior)
-- Git
-
-## Detalhes
-
-Os detalhes estão em comentários no arquivo _Main.java_
+1. Processar grandes quantidades de dados;
+2. Ler arquivos CSV;
+3. Utilizar estruturas de dados em Java, entre outras coisas.

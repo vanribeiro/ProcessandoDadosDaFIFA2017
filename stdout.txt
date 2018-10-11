@@ -5,14 +5,7 @@
 > Task :compileTestJava
 > Task :processTestResources NO-SOURCE
 > Task :testClasses
-
 > Task :test
 
-challenge.SubmitTest > q2 FAILED
-    java.lang.AssertionError at SubmitTest.java:21
-
-challenge.SubmitTest > q5 FAILED
-    java.lang.AssertionError at SubmitTest.java:82
-
-> Task :test FAILED
+BUILD SUCCESSFUL in 10s
 5 actionable tasks: 5 executed

@@ -2,14 +2,11 @@ package challenge;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import javax.annotation.Generated;
 
 public class Main {
 	static Main objetoMain = new Main();
@@ -41,8 +38,14 @@ public class Main {
 		
 		Set<String> clubes = new HashSet<String>();
 		for(int i = 0; i < dados.size(); i++) {
-			clubes.add(dados.get(i).getNomeDosClubes());
+			if(dados.get(i).getNomeDosClubes().isEmpty()) {
+				dados.remove("");
+			} else {
+				clubes.add(dados.get(i).getNomeDosClubes());
+			}
 		}
+		
+		System.out.println(clubes.size());
 
 		return clubes.size();
 	}
@@ -84,10 +87,6 @@ public class Main {
 		
 		for(int i = 0; i < 10; i++) {
 			osMaisVelhos.add(dados.get(i).getNomeCompleto());
-		}
-		
-		for(int i = 0; i < 10; i++) {
-			System.out.println(osMaisVelhos.get(i));
 		}
 		
 		return osMaisVelhos;

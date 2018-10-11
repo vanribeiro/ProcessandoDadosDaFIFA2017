@@ -1,6 +1,6 @@
 package challenge;
 
-import java.util.Date;
+import java.time.LocalDate;
 
 public class Jogadores {
 	
@@ -9,13 +9,13 @@ public class Jogadores {
 	private String nacionalidade;
 	private String nomeDosClubes;
 	private Double rescisao;
-	private Date dataDeNascimento;
+	private LocalDate dataDeNascimento;
 	private Double euroWage;
 
 	public Jogadores(String nome, int idade, 
 			String pais, String clube,
 			Double rescisao, Double euroWage,
-			Date dataDeNascimento) {
+			LocalDate dataDeNascimento) {
 		this.nomeCompleto = nome;
 		this.idade = idade;
 		this.nacionalidade = pais;
@@ -49,7 +49,7 @@ public class Jogadores {
 		return rescisao;
 	}
 
-	public Date getDataDeNascimento() {
+	public LocalDate getDataDeNascimento() {
 		return dataDeNascimento;
 	}
 

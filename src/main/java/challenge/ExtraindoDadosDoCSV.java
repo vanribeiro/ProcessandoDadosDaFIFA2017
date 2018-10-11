@@ -4,10 +4,9 @@ import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 public class ExtraindoDadosDoCSV {
@@ -53,16 +52,15 @@ public class ExtraindoDadosDoCSV {
 				if(aux[i].isEmpty()) {
 					aux[i] = "0.0";
 				}
+				/*
+				DateTimeFormatter formatar = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				LocalDate dataDeNascimento = LocalDate.parse(data, formatar);
+				*/
 				
 				Double rescisao = Double.parseDouble(aux[i]);
-				String birthDay = jogadores[8].replace("-", "/");
-				SimpleDateFormat formatarData = new SimpleDateFormat("dd/MM/yyyy");
-				Date aniversario = null;
-				try {
-					aniversario = formatarData.parse(birthDay);
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}
+				String birthDay = jogadores[8];
+				DateTimeFormatter formatar = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+				LocalDate aniversario = LocalDate.parse(birthDay, formatar);
 				
 				dadosDosJogadores.add(new Jogadores(nomeCompleto, idade, nacionalidade, 
 						nomeDosClubes, rescisao, euroWage, aniversario));
